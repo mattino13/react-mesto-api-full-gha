@@ -1,0 +1,13 @@
+.popup__subtitle_auth {
+  font-size: 14px;
+  line-height: 1.2;
+  padding-top: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__subtitle_auth {
+    padding-top: 20px;
+  }
+}

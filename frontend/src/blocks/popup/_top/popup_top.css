@@ -1,0 +1,9 @@
+.popup_top {
+  top: -215px;
+}
+
+@media screen and (max-width: 620px) {
+  .popup_top {
+    top: -363px;
+  }
+}

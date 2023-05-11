@@ -1,0 +1,7 @@
+.popup__item_auth {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #CCCCCC;
+  background: #000000;
+  color: #CCCCCC;
+  outline: none;
+}

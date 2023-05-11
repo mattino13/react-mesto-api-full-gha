@@ -1,0 +1,13 @@
+.header__login_email {
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-right: 24px;
+  cursor: default;
+}
+
+@media screen and (max-width: 420px) {
+  .header__login_email {
+    visibility: hidden;
+    font-size: 0;
+  }
+}  

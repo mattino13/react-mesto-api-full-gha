@@ -1,0 +1,13 @@
+.popup__form_auth {
+  background: #000000;
+  max-width: 430px;
+  min-height: 330px;
+  margin: auto;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__form_auth { 
+    max-width: 260px;
+    padding: 14px 30px;
+  }
+}

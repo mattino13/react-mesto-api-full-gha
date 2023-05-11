@@ -1,0 +1,15 @@
+.popup__infotooltip {
+  max-width: 430px;
+  min-height: 330px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__infotooltip {
+    max-width: 280px;
+    min-height: 308px;
+  }
+}
