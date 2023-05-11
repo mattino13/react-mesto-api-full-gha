@@ -6,6 +6,7 @@ const { errors } = require('celebrate');
 const appRouter = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { handleServerError, NotImplementedError } = require('./utils/errors');
+const { allowSimpleCors, allowPreflightCors } = require('./middlewares/corsAllowers');
 
 const { PORT = 3000 } = process.env;
 
@@ -16,6 +17,9 @@ const app = express();
 app.use(requestLogger);
 app.use(express.json());
 app.use(cookieParser());
+
+app.use(allowSimpleCors);
+app.use(allowPreflightCors);
 
 app.use('/', appRouter);
 app.use('*', (req, res, next) => { next(new NotImplementedError('Not implemented')); });
