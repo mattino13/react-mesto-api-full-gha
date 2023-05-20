@@ -40,17 +40,8 @@ class Auth {
   }
 
   //проверка токена
-  checkToken(token) {
-    const options = {
-      ...this._options,
-      };
-
-    options.headers = {
-      ...options.headers,
-      Authorization : `Bearer ${token}`
-    };
-
-    return this._request(this._buildUrl('/users/me'), options);
+  checkToken() {
+    return this._request(this._buildUrl('/users/me'), this._options);
   }
 
   _buildUrl(suffix) {
@@ -59,7 +50,9 @@ class Auth {
 }
 
 const auth = new Auth({
-  baseUrl: 'https://auth.nomoreparties.co',
+  baseUrl: 'http://localhost:3001',
+  //baseUrl: 'https://auth.nomoreparties.co',
+  credentials: 'include',
   headers: {
     'Content-Type': 'application/json'
   }

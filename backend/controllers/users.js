@@ -28,7 +28,7 @@ function findMe(req, res, next) {
 }
 
 function generateToken(payload) {
-  return jwt.sign(payload, jwtSecretKey, { expiresIn: '7d' });
+  return jwt.sign(payload, jwtSecretKey(), { expiresIn: '7d' });
 }
 
 function login(req, res, next) {
@@ -45,8 +45,8 @@ function login(req, res, next) {
       }
 
       const token = generateToken({ _id: user._id });
-      res.cookie('jwt', token, { httpOnly: true });
-      res.send({ success: true });
+      res.cookie('jwt', token, { sameSite: 'none', httpOnly: false });
+      res.send({ success: true, token });
       // для того, чтобы ушла ошибка linter 'consistent-return'
       return Promise.resolve();
     })

@@ -10,6 +10,11 @@ const CORS_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 const urlRegex = /^https?:\/\/(www\.)?[a-z0-9-]+\.[a-z]+[a-z0-9-._~:/?#[\]@!$&'()*+,;=]*#?$/i;
 
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true,
+};
+
 module.exports = {
   OK_HTTP_STATUS,
   CREATED_HTTP_STATUS,
@@ -21,4 +26,5 @@ module.exports = {
   COMMON_SERVER_ERROR_STATUS,
   CORS_ALLOWED_METHODS,
   urlRegex,
+  corsOptions,
 };

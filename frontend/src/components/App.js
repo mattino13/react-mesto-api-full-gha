@@ -51,9 +51,9 @@ function App() {
     const token = localStorage.getItem('token');
     
     if (token) {
-      auth.checkToken(token)
+      auth.checkToken()
         .then((result) => {
-          setEmail(result.data.email);
+          setEmail(result.email);
           setLoggedIn(true);
           navigate("/", {replace: true})
         }
@@ -159,6 +159,7 @@ function App() {
     auth.signin(email, password)
       .then((result) => {
           localStorage.setItem('token', result.token);
+          document.cookie = 'jwt=' + result.token;
           setLoggedIn(true);
           setEmail(email);
           setIsInfoTooltipSuccess(true);

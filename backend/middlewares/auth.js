@@ -6,7 +6,7 @@ function checkToken(token) {
   let result;
 
   if (token) {
-    result = jwt.verify(token, jwtSecretKey);
+    result = jwt.verify(token, jwtSecretKey());
   } else {
     throw new UnauthorizedError('Токен не найден');
   }
