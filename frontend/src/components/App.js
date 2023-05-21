@@ -48,7 +48,7 @@ function App() {
   }, []); 
 
   function checkToken() {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('hasToken');
     
     if (token) {
       auth.checkToken()
@@ -158,8 +158,7 @@ function App() {
   function handleLogin({ email, password }) {
     auth.signin(email, password)
       .then((result) => {
-          localStorage.setItem('token', result.token);
-          document.cookie = 'jwt=' + result.token;
+          localStorage.setItem('hasToken', 'true');
           setLoggedIn(true);
           setEmail(email);
           setIsInfoTooltipSuccess(true);
@@ -172,7 +171,7 @@ function App() {
   }
 
   function handleLogout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('hasToken');
     setLoggedIn(false);
     setEmail('');
     navigate('/sign-in', {replace: true});

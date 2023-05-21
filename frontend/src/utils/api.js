@@ -72,9 +72,9 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://localhost:3001',
+  //baseUrl: 'http://localhost:3001',
+  baseUrl: 'https://api.mattino13.nomoredomains.monster',
   credentials: 'include',
-  //baseUrl: 'https://auth.nomoreparties.co',
   headers: {
     'Content-Type': 'application/json'
   }

@@ -50,8 +50,8 @@ class Auth {
 }
 
 const auth = new Auth({
-  baseUrl: 'http://localhost:3001',
-  //baseUrl: 'https://auth.nomoreparties.co',
+  //baseUrl: 'http://localhost:3001',
+  baseUrl: 'https://api.mattino13.nomoredomains.monster',
   credentials: 'include',
   headers: {
     'Content-Type': 'application/json'

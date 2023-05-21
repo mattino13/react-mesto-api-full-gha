@@ -45,8 +45,8 @@ function login(req, res, next) {
       }
 
       const token = generateToken({ _id: user._id });
-      res.cookie('jwt', token, { sameSite: 'none', httpOnly: false });
-      res.send({ success: true, token });
+      res.cookie('jwt', token, { maxAge: (3600000 * 24 * 7), httpOnly: true });
+      res.send({ success: true });
       // для того, чтобы ушла ошибка linter 'consistent-return'
       return Promise.resolve();
     })
