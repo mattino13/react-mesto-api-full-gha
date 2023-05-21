@@ -11,7 +11,7 @@ const CORS_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 const urlRegex = /^https?:\/\/(www\.)?[a-z0-9-]+\.[a-z]+[a-z0-9-._~:/?#[\]@!$&'()*+,;=]*#?$/i;
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://mattino13.nomoredomains.monster', 'http://mattino13.nomoredomains.monster'],
+  origin: true,
   credentials: true,
 };
 
