@@ -7,8 +7,4 @@
 
 ## Ссылки на проект
 
-IP 51.250.81.224
 
-Frontend https://mattino13.nomoredomains.monster
-
-Backend https://api.mattino13.nomoredomains.monster
